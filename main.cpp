@@ -53,9 +53,12 @@ int main() {
 
     SLOGI("Vold 2.1 (the revenge) firing up");
 
+#if 0
 	property_get("ro.kernel.deepsleep", deepsleep, "no");
 	if(strcmp(deepsleep, "yes") != 0)
 		acquire_wake_lock(PARTIAL_WAKE_LOCK, "voldwakelock");
+#endif
+		
     mkdir("/dev/block/vold", 0755);
 
     /* For when cryptfs checks and mounts an encrypted filesystem */
